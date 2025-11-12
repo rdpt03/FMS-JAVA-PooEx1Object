@@ -9,6 +9,7 @@ public class City {
 	private String nVille;
 	private String nPays;
 	private int habitants;
+	private static int citiesCount = 0;
 	
 	
 	public City(String nVille, String nPays, int habitants) throws Exception {
@@ -18,6 +19,7 @@ public class City {
 		this.nVille = nVille;
 		this.nPays = nPays;
 		this.habitants = habitants;
+		City.citiesCount++;
 	}
 	
 	public City(String nVille, int habitants) throws Exception{
@@ -27,6 +29,7 @@ public class City {
 		this.nVille = nVille;
 		this.nPays = "unknown";
 		this.habitants = habitants;
+		City.citiesCount++;
 	}
 	
 
@@ -63,12 +66,21 @@ public class City {
 		this.setHabitants(this.getHabitants() + habitantsToAdd);
 	}
 
+	
+	
+	
 
+	public static int getCitiesQuantity() {
+		return citiesCount;
+	}
+
+	//ex1.4
 	public void display() {
 		System.out.println(this.toString());
 	}
 	
 	
+	//ex1.6
 	@Override
 	public String toString() {
 		return "Ville de "+this.nVille+" en/au "+this.nPays+" ayant "+this.habitants+" habitants";

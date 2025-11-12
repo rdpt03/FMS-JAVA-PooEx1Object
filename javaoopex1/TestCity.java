@@ -81,12 +81,15 @@ public class TestCity {
 		toulouse.addHabitants(-100000);
 		System.out.println(toulouse);
 
-		//----rabat----
+		//----rabat---- ex : 1.3
 		System.out.println(rabat);
 		rabat.setnPays("Maroc");
 		System.out.println(rabat);
 		
-		new Object().toString();
+		//1.7 print cities count
+		System.out.println(City.getCitiesQuantity());
+		
+		
 		
 		//1.5 le code affiche le nom de la classe suivi de son code exadecimal, possiblement sa valeur en RAM);
 	}
