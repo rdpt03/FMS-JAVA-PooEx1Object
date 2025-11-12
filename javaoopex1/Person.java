@@ -117,8 +117,7 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "Person [firstName=" + lastName + ", lastName=" + firstName + ", age=" + age + ", adress=" + adress
-				+ ", bornCity=" + bornCity + "]";
+		return lastName + ", "+ firstName + ", "+ age + " ans, habitant " + adress + ", ville de naissance : " + bornCity;
 	}
 	
 	
