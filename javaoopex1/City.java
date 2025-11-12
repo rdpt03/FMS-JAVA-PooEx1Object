@@ -6,19 +6,19 @@ public class City {
 	public String nPays;
 	public int habitants;
 	*/
-	private String nVille;
-	private String nPays;
-	private int habitants;
+	private String cityName;
+	private String countryName;
+	private int inhabitants;
 	private static int citiesCount = 0;
 	
-	
+	//---------constructors----------
 	public City(String nVille, String nPays, int habitants) throws Exception {
 		if(habitants < 0) {
 			throw new Exception("La ville "+ nVille +" ne peut contenir moins de 0 habitants");
 		}
-		this.nVille = nVille;
-		this.nPays = nPays;
-		this.habitants = habitants;
+		this.cityName = nVille;
+		this.countryName = nPays;
+		this.inhabitants = habitants;
 		City.citiesCount++;
 	}
 	
@@ -26,44 +26,55 @@ public class City {
 		if(habitants < 0) {
 			throw new Exception("La ville "+ nVille +" ne peut contenir moins de 0 habitants");
 		}	
-		this.nVille = nVille;
-		this.nPays = "unknown";
-		this.habitants = habitants;
+		this.cityName = nVille;
+		this.countryName = "unknown";
+		this.inhabitants = habitants;
+		City.citiesCount++;
+	}
+	
+	public City(String nVille, String country) throws Exception{
+		if(inhabitants < 0) {
+			throw new Exception("La ville "+ nVille +" ne peut contenir moins de 0 habitants");
+		}	
+		this.cityName = nVille;
+		this.countryName = country;
+		this.inhabitants = 0;
 		City.citiesCount++;
 	}
 	
 
-	public String getnVille() {
-		return nVille;
+	//----------------------getters and setters---------------------
+	public String getCityName() {
+		return cityName;
 	}
 
-	public void setnVille(String nVille) {
-		this.nVille = nVille;
-	}
-
-
-	public String getnPays() {
-		return nPays;
-	}
-
-	public void setnPays(String nPays) {
-		this.nPays = nPays;
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
 	}
 
 
-	public int getHabitants() {
-		return habitants;
+	public String getCountryName() {
+		return countryName;
 	}
 
-	public void setHabitants(int habitants) throws Exception {
+	public void setCountryName(String countryName) {
+		this.countryName = countryName;
+	}
+
+
+	public int getInhabitants() {
+		return inhabitants;
+	}
+
+	public void setInhabitants(int habitants) throws Exception {
 		if(habitants < 0) {
-			throw new Exception("La ville"+ this.nVille +"ne peut contenir moins de 0 habitants");
+			throw new Exception("La ville"+ this.countryName +"ne peut contenir moins de 0 habitants");
 		}
-		this.habitants = habitants;
+		this.inhabitants = habitants;
 	}
 	
-	public void addHabitants(int habitantsToAdd) throws Exception {
-		this.setHabitants(this.getHabitants() + habitantsToAdd);
+	public void addHabitants(int inhabitantsToAdd) throws Exception {
+		this.setInhabitants(this.getInhabitants() + inhabitantsToAdd);
 	}
 
 	
@@ -83,10 +94,6 @@ public class City {
 	//ex1.6
 	@Override
 	public String toString() {
-		return "Ville de "+this.nVille+" en/au "+this.nPays+" ayant "+this.habitants+" habitants";
+		return "Ville de "+this.cityName+" en/au "+this.countryName+" ayant "+this.inhabitants+" habitants";
 	}
-	
-	
-	
-	
 }
