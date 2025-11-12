@@ -83,7 +83,7 @@ public class TestCity {
 
 		//----rabat---- ex : 1.3
 		System.out.println(rabat);
-		rabat.setnPays("Maroc");
+		rabat.setCountryName("Maroc");
 		System.out.println(rabat);
 		
 		//1.7 print cities count
