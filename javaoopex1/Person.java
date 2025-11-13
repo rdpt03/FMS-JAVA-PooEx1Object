@@ -167,6 +167,8 @@ public class Person {
      *
      * @return a string describing the person
      */
-    @Override
-    public String toString() {
-        return lastName + ", " + firstName + ", " + age + " ans, habitant " + adress + ", v
+	@Override
+	public String toString() {
+		return lastName + ", "+ firstName + ", "+ age + " ans, habitant " + adress + ", ville de naissance : " + bornCity;
+	}
+}
